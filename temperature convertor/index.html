@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .converter {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .converter input {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .converter button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .converter button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Temperature Converter</h1>
+        <input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+        <button onclick="convertTemperature()">Convert to Fahrenheit</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            var celsius = document.getElementById("celsius").value;
+            var fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById("result").innerText = celsius + "°C is " + fahrenheit.toFixed(2) + "°F";
+        }
+    </script>
+</body>
+</html>
